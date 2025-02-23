@@ -1,0 +1,12 @@
+{
+    "light": {
+      "background": "#FFFFFF",
+      "foreground": "#d1d1cf",
+      "text": "#000000"
+    },
+    "dark": {
+      "background": "#000000",
+      "foreground": "#1e1e1e",
+      "text": "#32cd32"
+    }
+  }

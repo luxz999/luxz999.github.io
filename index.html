@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxz Terminal Bio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/default.ico">
+</head>
+<body>
+  <!-- Click to Enter Screen -->
+  <div id="entry-screen">
+    <div id="profile-container">
+      <img id="profile-image" src="assets/images/profile.jpg" alt="Profile Picture">
+      <h1 id="profile-name">Luxz</h1>
+    </div>
+    <h1 class="animated-text">Click anywhere to enter</h1>
+  </div>
+
+  <!-- Terminal Interface -->
+  <div id="terminal-container">
+    <!-- Header Bar -->
+    <div id="terminal-header">
+      <div class="buttons">
+        <span class="btn close"></span>
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+      </div>
+      <span id="terminal-title">Terminal</span>
+    </div>
+
+    <!-- Terminal Content -->
+    <div id="terminal">
+      <pre id="welcome-message">
+██╗     ██╗   ██╗██╗  ██╗███████╗
+██║     ██║   ██║╚██╗██╔╝╚══███╔╝
+██║     ██║   ██║ ╚███╔╝   ███╔╝ 
+██║     ██║   ██║ ██╔██╗  ███╔╝  
+███████╗╚██████╔╝██╔╝ ██╗███████╗
+╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ v.0.0.1
+
+Type 'help' to see list of available commands.
+      </pre>
+      
+      <div id="output"></div>
+      <div id="input-line">
+        <span id="prompt">luxz@fakeshit:~$</span><input type="text" id="command-input" autofocus autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <!-- Music Controls -->
+  <div id="music-controls">
+    <div id="album-container">
+      <img id="album-cover" src="assets/images/default-cover.jpg" alt="Album Cover">
+    </div>
+    <div id="controls-container">
+      <p id="song-title">No song playing</p>
+      <div id="progress-bar-container">
+        <input type="range" id="progress-bar" min="0" max="100" value="0">
+      </div>
+      <div id="time-display">
+        <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+      </div>
+      <div id="control-buttons">
+        <button id="prev-btn">⏮️</button>
+        <button id="play-pause-btn">▶️</button>
+        <button id="next-btn">⏭️</button>
+        <button id="volume-icon">🔊</button>
+      </div>
+      <div id="volume-slider-container">
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+        <span id="volume-percentage">50%</span>
+      </div>
+    </div>
+  </div>
+
+  <audio id="background-music"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

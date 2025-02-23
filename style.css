@@ -1,0 +1,422 @@
+/* General Styles */
+:root {
+    --bg-color: black;
+    --terminal-bg: #1e1e1e;
+    --text-color: limegreen;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    cursor: url('assets/images/custom-cursor.ico'), auto !important; /* เปลี่ยน Cursor */
+  }
+  
+  /* Entry Screen */
+  #entry-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: limegreen;
+    cursor: url('assets/images/custom-cursor.ico'), auto !important; /* เปลี่ยน Cursor */
+  }
+  
+  #profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Image with Glow Effect */
+  #profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid limegreen; /* สีขอบเริ่มต้น */
+    box-shadow: 0 0 10px limegreen, 0 0 20px limegreen; /* เรืองแสงเริ่มต้น */
+    transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out; /* เพิ่ม Transition */
+    animation: profile-glow 2s infinite alternate; /* เพิ่ม Animation */
+  }
+  
+  /* Hover Effect */
+  #profile-image:hover {
+    transform: scale(1.07); /* ขยายเมื่อ Hover */
+    box-shadow: 0 0 20px limegreen, 0 0 40px limegreen, 0 0 60px limegreen; /* เพิ่มเรืองแสงเมื่อ Hover */
+  }
+  
+  /* Animation for Glow Effect */
+  @keyframes profile-glow {
+    0% {
+      box-shadow: 0 0 10px limegreen, 0 0 20px limegreen;
+    }
+    100% {
+      box-shadow: 0 0 20px limegreen, 0 0 40px limegreen, 0 0 60px limegreen;
+    }
+  }
+  
+  #profile-name {
+    font-size: 2rem;
+    margin-top: 10px;
+    text-shadow: 0 0 10px limegreen, 0 0 20px limegreen;
+  }
+  
+  .animated-text {
+    font-size: 2rem;
+    animation: text-glow 2s infinite alternate;
+  }
+  
+  @keyframes text-glow {
+    0% {
+      text-shadow: 0 0 10px limegreen, 0 0 20px limegreen, 0 0 40px limegreen;
+    }
+    100% {
+      text-shadow: 0 0 20px limegreen, 0 0 30px limegreen, 0 0 50px limegreen;
+    }
+  }
+  
+  /* Terminal Interface */
+  #terminal-container {
+    display: none; /* ซ่อน Terminal เริ่มต้น */
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Terminal Header */
+  #terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e3440;
+    padding: 5px 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: url('assets/images/custom-cursor.ico'), auto !important;
+  }
+  
+  .close {
+    background-color: #ff5f56;
+  }
+  
+  .minimize {
+    background-color: #ffbd2e;
+  }
+  
+  .maximize {
+    background-color: #27c93f;
+  }
+
+  #welcome-message {
+    font-family: 'Courier New', monospace; /* ใช้ฟอนต์ Monospace */
+    font-size: 1rem; /* ปรับขนาดฟอนต์ตามต้องการ */
+    color: limegreen; /* สีข้อความ */
+    margin: 20px 0; /* เพิ่มระยะห่าง */
+    white-space: pre-wrap; /* รักษาการขึ้นบรรทัดใหม่ */
+  }
+
+  #terminal-title {
+    font-size: 14px;
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  /* Terminal Content */
+  #terminal {
+    background-color: var(--terminal-bg);
+    padding: 10px;
+    border-radius: 5px;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    font-size: 18px; /* เพิ่มขนาดฟอนต์ */
+  }
+  
+  /* Input Line */
+  #input-line {
+    display: flex;
+    align-items: center; /* จัดตำแหน่งแนวตั้งให้อยู่ตรงกลาง */
+  }
+  
+  #input-line #prompt {
+    color: var(--text-color); /* สีข้อความจาก CSS Variables */
+    margin-right: 5px; /* ระยะห่างระหว่าง prompt และ input */
+    white-space: nowrap; /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
+  }
+  
+  #input-line input {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-size: 18px; /* เพิ่มขนาดฟอนต์ */
+    width: 100%; /* ขยายเต็มความกว้างที่เหลือ */
+  }
+  
+  /* Music Controls */
+  #music-controls {
+    display: none; /* ซ่อนตัวควบคุมเพลงเริ่มต้น */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px; /* ขนาด 1:1 */
+    height: 300px; /* ขนาด 1:1 */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+  
+  #album-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  #album-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #album-cover:hover {
+    transform: scale(1.1);
+  }
+  
+  #controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: limegreen;
+    text-align: center;
+  }
+  
+  #song-title {
+    font-size: 16px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
+  #progress-bar-container {
+    width: 100%;
+  }
+  
+  #progress-bar {
+    width: 100%;
+  }
+  
+  #time-display {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  #control-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  #control-buttons button {
+    background: none;
+    border: none;
+    color: limegreen;
+    font-size: 24px;
+    cursor:  url('assets/images/custom-cursor.ico'), pointer;;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  #control-buttons button:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Volume Control */
+  #volume-slider-container {
+    display: none; /* Hide by default */
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #volume-slider {
+    width: 80%;
+    height: 5px;
+    background: none;
+    accent-color: limegreen; /* สีของ Slider */
+  }
+  
+  #volume-percentage {
+    font-size: 14px;
+  }
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+
+  #welcome-message {
+    font-size: 14px;
+  }
+  /* Adjust Terminal Font Size */
+  #terminal {
+    font-size: 14px;
+  }
+  #input-line input {
+    font-size: 14px;
+  }
+
+  /* Adjust Music Controls Size and Position */
+  #music-controls {
+    width: 200px;
+    height: auto; /* Adjust height dynamically */
+    padding: 10px;
+    position: fixed;
+    top: 10px; /* Move to top-right corner */
+    right: 10px; /* Move to top-right corner */
+    bottom: auto; /* Remove bottom positioning */
+  }
+
+  /* Reduce Album Cover Size */
+  #album-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Reduce Song Title Font Size */
+  #song-title {
+    font-size: 14px;
+  }
+
+  /* Reduce Progress Bar Height */
+  #progress-bar {
+    height: 4px;
+  }
+
+  /* Reduce Time Display Font Size */
+  #time-display {
+    font-size: 12px;
+    width: 80%;
+  }
+
+  /* Reduce Button Sizes */
+  #control-buttons button {
+    font-size: 16px;
+  }
+
+  /* Reduce Volume Slider Height */
+  #volume-slider {
+    height: 4px;
+  }
+
+  /* Reduce Volume Percentage Font Size */
+  #volume-percentage {
+    font-size: 12px;
+  }
+
+  /* Reduce Entry Screen Text Size */
+  #profile-name {
+    font-size: 1.5rem; /* Reduce profile name size */
+  }
+
+  .animated-text {
+    font-size: 1.2rem; /* Reduce animated text size */
+  }
+
+  /* Hide Some Elements on Small Screens */
+  #welcome-message pre {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #welcome-message {
+    font-size: 12px;
+  }
+  /* Further Adjustments for Smaller Screens */
+  #terminal {
+    font-size: 12px;
+  }
+  #input-line input {
+    font-size: 12px;
+  }
+
+  /* Further Reduce Music Controls Size */
+  #music-controls {
+    width: 150px;
+    padding: 8px;
+  }
+
+  /* Further Reduce Album Cover Size */
+  #album-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Further Reduce Song Title Font Size */
+  #song-title {
+    font-size: 12px;
+  }
+
+  /* Further Reduce Progress Bar Height */
+  #progress-bar {
+    height: 3px;
+  }
+
+  /* Further Reduce Time Display Font Size */
+  #time-display {
+    font-size: 10px;
+  }
+
+  /* Further Reduce Button Sizes */
+  #control-buttons button {
+    font-size: 14px;
+  }
+
+  /* Further Reduce Volume Slider Height */
+  #volume-slider {
+    height: 3px;
+  }
+
+  /* Further Reduce Volume Percentage Font Size */
+  #volume-percentage {
+    font-size: 10px;
+  }
+
+  /* Further Reduce Entry Screen Text Size */
+  #profile-name {
+    font-size: 1.2rem; /* Even smaller profile name */
+  }
+
+  .animated-text {
+    font-size: 1rem; /* Even smaller animated text */
+  }
+}
