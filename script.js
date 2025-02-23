@@ -25,17 +25,10 @@ const terminal = document.getElementById('terminal');
 // Music Playlist
 const songs = [
   { name: 'Summer Salt - Speaking Sonar', file: 'assets/songs/Speaking Sonar.mp3', cover: 'assets/images/Speaking Sonar_thumbnail.jpg' },
-  { name: 'Summer Salt - Candy Wrappers', file: 'assets/songs/Candy Wrappers.mp3', cover: 'assets/images/Summer Salt - Candy Wrappers (Official Video)_thumbnail.jpg' },
   { name: 'Summer Salt - Swinging for the Fences', file: 'assets/songs/Swinging for the Fences.mp3', cover: 'assets/images/Swinging for the Fences_thumbnail.jpg' },
   { name: 'Summer Salt - Seventeen', file: 'assets/songs/Seventeen.mp3', cover: 'assets/images/Seventeen_thumbnail.jpg' },
   { name: 'Summer Salt - Rockin My Paw', file: 'assets/songs/Rockin My Paw.mp3', cover: 'assets/images/Rockin My Paw_thumbnail.jpg' },
   { name: "Summer Salt - Revvin' My Cj7", file: "assets/songs/Revvin' My Cj7.mp3", cover: "assets/images/Revvin' My Cj7_thumbnail.jpg" },
-  { name: 'Summer Salt - Oh Dear', file: 'assets/songs/Oh Dear.mp3', cover: 'assets/images/Oh Dear_thumbnail.jpg' },
-  { name: 'Summer Salt - Lovesick', file: 'assets/songs/Lovesick.mp3', cover: 'assets/images/Lovesick_thumbnail.jpg' },
-  { name: "Summer Salt - Life Ain't the Same", file: "assets/songs/Life Ain't the Same.mp3", cover: "assets/images/Life Ain't the Same_thumbnail.jpg" },
-  { name: 'Summer Salt - Heart and My Car', file: 'assets/songs/Heart and My Car.mp3', cover: 'assets/images/Heart and My Car_thumbnail.jpg' },
-  { name: 'Summer Salt - Fast Furious and Wonderful', file: 'assets/songs/Fast Furious and Wonderful.mp3', cover: 'assets/images/Fast Furious and Wonderful_thumbnail.jpg' },
-  { name: 'Summer Salt - Happy Camper', file: 'assets/songs/Happy Camper.mp3', cover: 'assets/images/Happy Camper_thumbnail.jpg' }
 ];
 let currentSongIndex = 0;
 // Initialize Music Player
